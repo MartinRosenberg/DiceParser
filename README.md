@@ -16,6 +16,7 @@ $ ./dice_parser "3d6 + 5d4 - 7"
 - Allow parentheses.
 - Allow "d%".
 - Allow keep/drop highest/lowest.
+- Clean up the code extensively.
 - Accept prefix and postfix notations.
 - Accept expression as multiple arguments (i.e. without surrounding quotes).
 - Make it a Slack bot.
