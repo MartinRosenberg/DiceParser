@@ -45,7 +45,11 @@ def conv_to_op(s):
 if __name__ == "__main__":
     logging.basicConfig(level = logging.ERROR)
     expr = re.sub(r"\s+", "", sys.argv[1], flags = re.UNICODE) # Remove all whitespace
-    expr = re.findall(r"[\d.]+|[^\d.]+", expr) # Create a list of operands and operators
+    logger.debug(expr)
+    expr = re.findall(r"%|[\d.]+|[^\d.%]+", expr) # Create a list of operands and operators
+    logger.debug(expr)
+    expr = [100 if (expr[i] == "%" and expr[i - 1] == "d") else expr[i] for i in range(len(expr))] # % => 100 or mod
+    logger.debug(expr)
     expr = deque(conv_to_op(elem) for elem in expr) # Convert the strings to floats, integers, Ops; put them back in a deque
     logger.debug(expr)
 
