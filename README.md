@@ -4,17 +4,19 @@ Just a simple dice parser for a coding challenge.
 
 ## Usage
 
-Input an infix expression as a single string (i.e. put quotes around it). Whitespace is ignored.
+Input an expression as a single string (i.e. put quotes around it). Whitespace is ignored.
 
 ```bash
-$ ./dice_parser "3d6 + 5d4 - 7"
-32
+$ ./dice_parser "1d6 + 2d4 - 2"
+7
+$ ./dice_parser "1d20 + 4 >= 15"
+Success
 ```
 
 ## Project Roadmap
 
 - Allow parentheses.
-- Allow "d%".
+- Allow Fudge dice: "dF", "dF.1", "dF.2"
 - Allow keep/drop highest/lowest.
 - Clean up the code extensively.
 - Accept prefix and postfix notations.
