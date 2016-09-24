@@ -9,13 +9,14 @@ Input an expression as a single string (i.e. put quotes around it). Whitespace i
 ```bash
 $ ./dice_parser "1d6 + 2d4 - 2"
 7
-$ ./dice_parser "1d20 + 4 >= 15"
+$ ./dice_parser "1d% >= 75"
 Success
 ```
 
 ## Project Roadmap
 
 - Allow parentheses.
+- Allow just "d#" as shorthand for "1d#".
 - Allow Fudge dice: "dF", "dF.1", "dF.2"
 - Allow keep/drop highest/lowest.
 - Clean up the code extensively.
