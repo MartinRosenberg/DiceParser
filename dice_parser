@@ -69,4 +69,5 @@ if __name__ == "__main__":
     while op_stack:
         b, a = num_stack.pop(), num_stack.pop()
         num_stack.append(op_stack.pop().func(a, b))
-    print(num_stack[0])
+    res = num_stack[0]
+    print(res if type(res) in (int, float) else "Success" if res else "Failure")
