@@ -44,9 +44,9 @@ def conv_to_op(s):
 
 if __name__ == "__main__":
     logging.basicConfig(level = logging.ERROR)
-    expr = re.sub(r"\s+", "", sys.argv[1], flags = re.UNICODE)
-    expr = re.findall(r"[\d.]+|[^\d.]+", expr)
-    expr = deque(conv_to_op(elem) for elem in expr)
+    expr = re.sub(r"\s+", "", sys.argv[1], flags = re.UNICODE) # Remove all whitespace
+    expr = re.findall(r"[\d.]+|[^\d.]+", expr) # Create a list of operands and operators
+    expr = deque(conv_to_op(elem) for elem in expr) # Convert the strings to floats, integers, Ops; put them back in a deque
     logger.debug(expr)
 
     op_stack = []
@@ -59,12 +59,10 @@ if __name__ == "__main__":
             num_stack.append(curr)
         else:
             while op_stack and op_stack[-1].prec >= curr.prec:
-                b = num_stack.pop()
-                a = num_stack.pop()
+                b, a = num_stack.pop(), num_stack.pop()
                 num_stack.append(op_stack.pop().func(a, b))
             op_stack.append(curr)
     while op_stack:
-        b = num_stack.pop()
-        a = num_stack.pop()
+        b, a = num_stack.pop(), num_stack.pop()
         num_stack.append(op_stack.pop().func(a, b))
     print(num_stack[0])
