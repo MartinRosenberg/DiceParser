@@ -43,11 +43,9 @@ def conv_to_op(s):
             return ops[s]
 
 if __name__ == "__main__":
-    logging.basicConfig(level = logging.DEBUG)
+    logging.basicConfig(level = logging.ERROR)
     expr = re.sub(r"\s+", "", sys.argv[1], flags = re.UNICODE)
-    logger.debug(expr)
     expr = re.findall(r"[\d.]+|[^\d.]+", expr)
-    logger.debug(expr)
     expr = deque(conv_to_op(elem) for elem in expr)
     logger.debug(expr)
 
