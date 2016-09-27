@@ -15,6 +15,7 @@ Success
 
 ## Project Roadmap
 
+- Handle input syntax errors.
 - Allow parentheses.
 - Allow just "d#" as shorthand for "1d#".
 - Allow Fudge dice: "dF", "dF.1", "dF.2"
