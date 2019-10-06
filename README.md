@@ -15,12 +15,12 @@ Success
 
 ## Project Roadmap
 
-- Handle input syntax errors.
-- Allow parentheses.
-- Allow just "d#" as shorthand for "1d#".
-- Allow Fudge dice: "dF", "dF.1", "dF.2"
-- Allow keep/drop highest/lowest.
-- Clean up the code extensively.
-- Accept prefix and postfix notations.
-- Accept expression as multiple arguments (i.e. without surrounding quotes).
-- Make it a Slack bot.
+- [ ] Handle input syntax errors.
+- [ ] Allow parentheses.
+- [ ] Allow just "d#" as shorthand for "1d#".
+- [ ] Allow Fudge dice: "dF", "dF.1", "dF.2"
+- [ ] Allow keep/drop highest/lowest.
+- [ ] Clean up the code extensively.
+- [ ] Accept prefix and postfix notations.
+- [ ] Accept expression as multiple arguments (i.e. without surrounding quotes).
+- [ ] Make it a Slack bot.
